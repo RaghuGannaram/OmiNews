@@ -1,38 +1,142 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+
 .App {
   text-align: center;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/**************************************************** Main Header Styling **********************************/
+.mainHeader{
+  height: 50px;
+  padding: 20px;
+  background-color: rgb(22,72,85);
+  border-bottom: 1px solid rgb(14,55,78);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.headRight{
+  float: right;
+  font-style: italic;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.headLeft{
+  float: left;
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.headLeft:hover .headRight:hover{
+  color: #ddd;
+}
+
+/******************************************************** Sign In Page Styling****************************************/
+.signInCard{
+  background-color: rgb(21,77,109);
+  border: 1px solid black;
+  width: 300px;
+  height: 350px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.signInCard label{
+  display: block;
+  margin-bottom: 10px;
+}
+
+.signInCard .form-field{
+  margin: 30px auto;
+}
+
+.signInCard input{
+  background-color: rgb(179,210,211);
+  height: 25px;
+  text-align: center;
+  padding: 0px 3px;
+  border: none;
+  border-radius: 3px;
+}
+
+.signInCard #signin-button{
+  margin-top: 50px;
+  height: 30px;
+  width: 80px;
+  color: #fff;
+  background-color: rgb(21,60,70);
+}
+
+
+/****************************************************** Welcome Banner Styling **************************************/
+.welcomeBanner > h1{
+  margin-top: 50px;
+  padding: 10px;
+}
+
+.welcomeBanner > p {
+  margin: 10px;
+  padding: 10px;
+}
+
+
+/****************************************************** News Item Styling ********************************************/
+.NewsItem{
+  list-style-type: none;
+  background-color: rgb(21,60,70);
+  margin: 40p0x 20px; 
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.articleBody{
+  padding: 0px 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.articlTitle{
+  color: black;
+}
+
+.articleLink{
+  text-decoration: none;
+  color: rgb(24, 207, 70);
+}
+
+.articleFooter{
+  color: rgb(147, 224,21);
+  background-color: rgb(43,133,145);
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/***************************************************************** Archive Feed **************************************************/
+.showArchiveHandler{
+  padding-top: 50px;
+  font-size: 20px;
+}
+
+.showmainHandler{
+  padding-top: 50px;
+  font-size: 20px;
+}
+
+.archiveFeed{
+  margin-top: 100px;
+}
+
+/**************************************************************** Main Footer Styling ***************************************************/
+
+#main-footer{
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  padding-top: 10px;
+  background-color: rgb(22,72,85);
+  border-top: 2px solid rgb(7, 40, 48);
 }
