@@ -13,7 +13,7 @@
 .mainHeader{
   height: 50px;
   padding: 20px;
-  background-color: rgb(22,72,85);
+  background-color: rgb(21,77,109);
   border-bottom: 1px solid rgb(14,55,78);
 }
 
@@ -72,45 +72,81 @@
 
 
 /****************************************************** Welcome Banner Styling **************************************/
-.welcomeBanner > h1{
-  margin-top: 50px;
-  padding: 10px;
+
+.welcomeBanner>h1{
+  margin-top: 100px;
+  margin-bottom: 20px;
 }
 
 .welcomeBanner > p {
-  margin: 10px;
-  padding: 10px;
+  padding: 5px;
 }
+
+
+/****************************************************** News Feed Styling ********************************************/
+.newsFeed{
+  margin: 20px;
+}
+
+
 
 
 /****************************************************** News Item Styling ********************************************/
-.NewsItem{
+.newsItem{
   list-style-type: none;
-  background-color: rgb(21,60,70);
-  margin: 40p0x 20px; 
-  padding: 20px;
   display: flex;
+  align-items: center;
+  background-color: rgb(5, 98, 151);
+  height: 250px;
+  min-width: 1000px;
+  padding: 30px;
+  margin: 30px; 
+  border-radius: 3px;
+}
+
+.newsImage{
+  width: 25%;
+  height: 100%;
+  border-radius: 3px;
+  border: 2px solid rgb(12, 77, 131);
 }
 
 .articleBody{
-  padding: 0px 20px;
+  position: relative;
+  padding: 10px ;
+  box-sizing: border-box;
+  background-color: rgb(2, 73, 117);
+  height: 100%;
+  width: 70%;
+  margin-left: 30px;
+  border-radius: 3px;
 }
 
-.articlTitle{
-  color: black;
+.articleTitle{
+  color: rgb(6, 160, 199);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.articleContent , .articleDescription{
+  color: #ccc;
+  font-family:'Courier New', Courier, monospace;
+  text-align: left;
 }
 
 .articleLink{
   text-decoration: none;
-  color: rgb(24, 207, 70);
+  color: rgb(4, 141, 175);
 }
 
 .articleFooter{
-  color: rgb(147, 224,21);
-  background-color: rgb(43,133,145);
-  margin-bottom: 5px;
+  position: absolute;
+  bottom: 0;
+  color: rgb(4, 141, 175);
   display: flex;
   justify-content: space-around;
+  border-radius: 3px;
+  border-top: 2px solid rgb(1, 62, 90);
+  width: 98%;
 }
 
 
@@ -137,6 +173,5 @@
   height: 40px;
   width: 100%;
   padding-top: 10px;
-  background-color: rgb(22,72,85);
-  border-top: 2px solid rgb(7, 40, 48);
+  background-color: rgb(21,77,109);
 }

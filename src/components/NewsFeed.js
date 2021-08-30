@@ -13,7 +13,7 @@ export class NewsFeed extends Component {
     }
     
     componentDidMount(){
-        axios.get("https://newsapi.org/v2/everything?q=bitcoin&from=2021-07-28&sortBy=publishedAt&apiKey=50fdb2db60ae4a758a309131025cfaac")
+        axios.get("https://newsapi.org/v2/everything?q='india'&apiKey=50fdb2db60ae4a758a309131025cfaac&language=en")
         .then(res =>{
             this.setState({articles : res.data.articles})
         })
@@ -22,7 +22,7 @@ export class NewsFeed extends Component {
     render() {
         return (
             <ul className = "newsFeed">
-                {this.state.articles.map(article => <NewsItem article = {article}/>)}
+                {this.state.articles.map((article, i) => <NewsItem key = {i} article = {article}/>)}
             </ul>
         )
     }

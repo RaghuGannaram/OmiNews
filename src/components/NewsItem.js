@@ -2,13 +2,11 @@ import React from 'react'
 
 function NewsItem(props) {
     return (
-        <li className = "NewsItem">
+        <li className = "newsItem">
             <img
-                className = "image"
-                src = {props.article.urlToImage}
-                widrh = "400px"
-                height = "250px"
-                alt = "Not Found"
+                className = "newsImage"
+                src = {props.article.urlToImage ? props.article.urlToImage : process.env.PUBLIC_URL +'/Image_not_available.png'}
+                alt = "Not found" 
             />
             <div className = "articleBody">
                 <h2 className = "articleTitle">{props.article.title}</h2>
@@ -18,16 +16,16 @@ function NewsItem(props) {
                 <p className = "articleDescription">{props.article.description}</p>
                 <br/>
                 <div className = "articleFooter">
-                    <span className = "articleAuthor">Author : {props.article.author}</span>
-                    <span className = "articlePublished">Published at : {props.article.publishedAt}</span>
-                    <span className = "articleSource">Author : {props.article.source.name}</span>
+                    <span className = "articleAuthor">Author : {props.article.author ? props.article.author : "Unknown" }</span>
+                    <span className = "articlePublished">Published at : {props.article.publishedAt ? props.article.publishedAt : "Unknown"}</span>
+                    <span className = "articleSource">Author : {props.article.source.name ? props.article.source.name : "Unknown"}</span>
                     <a 
                         className = "articleLink"
                         href = {props.article.url}
                         target = "_blank"
                         rel = "noreferrer"
                     >
-                        Link to the Article --&gr;
+                        Link to the Article --&gt;
                     </a>
                 </div>
 
