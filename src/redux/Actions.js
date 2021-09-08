@@ -1,4 +1,4 @@
-import { SIGN_IN, SIGNED_IN, SIGN_OUT, SHOW_WELCOME_PAGE} from "./ActionTypes";
+import { SIGN_IN,  SIGN_OUT} from "./ActionTypes";
 
 
 export const signInAction = () => {
@@ -7,20 +7,9 @@ export const signInAction = () => {
     }
 }
 
-export const signInSucceededAction = () => {
-    return {
-        type : SIGNED_IN
-    }
-}
 
 export const signOutAction = () => {
     return {
         type : SIGN_OUT
-    }
-}
-
-export const showWelcomePageAction = () => {
-    return {
-        type : SHOW_WELCOME_PAGE
     }
 }

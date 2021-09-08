@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {signInAction, signInSucceededAction, signOutAction} from "../redux";
+import {signInAction, signOutAction} from "../redux";
+import MainSpace from './MainSpace';
 
 export class SignIn extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ export class SignIn extends Component {
              error:""
         }
     }
+    
     
     handleInputchange = (event) =>{
         event.target.name === "username" ? this.setState({username: event.target.value}) : this.setState({password:  event.target.value})
@@ -34,60 +36,59 @@ export class SignIn extends Component {
         this.state.username === "Omi" &&
         this.state.password === "1234")
         {
-            this.props.signInSucceededAction()
+            this.props.signIn()
+            
         }
     } 
 
     render() {
         return (
-            <div className = "signInCard">
-                <h3>Sign In</h3>
-                <form className = "form" onSubmit = {this.handleSubmit}>
-                    <div className = "form-field">
-                        <label>User Name</label>
-                        <input
-                            name = "username"
-                            id = "username"
-                            type = "text"
-                            value = {this.state.username}
-                            onChange = {this.handleInputchange}
-                        />
+            this.props.isLoggedIn ? <MainSpace/> :
+                <div className = "signInCard">
+                    <h3>Sign In</h3>
+                    <form className = "form" onSubmit = {this.handleSubmit}>
                         <div className = "form-field">
-                            <label>Password</label>
+                            <label>User Name</label>
                             <input
-                                name = "password"
-                                id = "password"
-                                type = "password"
-                                value = {this.state.password}
-                                onChange={this.handleInputchange}
+                                name = "username"
+                                id = "username"
+                                type = "text"
+                                value = {this.state.username}
+                                onChange = {this.handleInputchange}
                             />
+                            <div className = "form-field">
+                                <label>Password</label>
+                                <input
+                                    name = "password"
+                                    id = "password"
+                                    type = "password"
+                                    value = {this.state.password}
+                                    onChange={this.handleInputchange}
+                                />
+                                <br/>
+                                <span style = {{color : "white", fontSize:"14px"}}>{this.state.error}</span>
+                            </div>
+                            <div className="form-field">
+                                <input
+                                    id = "signin-button"
+                                    type = "submit"
+                                />
+                            </div>
                         </div>
-                        <div>
-                            <span style = {{color : "white"}}>{this.state.error}</span>
-                        </div>
-                        <div className="form-field">
-                            <input
-                                id = "signin-button"
-                                type = "submit"
-                            />
-                        </div>
-                    </div>
-                </form>
-            </div>
+                    </form>
+                </div>
         )
     }
 }
 
 const mapStateToProps = state =>{
     return {
-        isLoggedIn : state.IS_LOGGED_IN,
-        showSignIn:  state.SHOW_SIGN_IN
+        isLoggedIn : state.LOGIN_STATUS
     }
 }
 const mapDispatchToProps = dispatch =>{
     return{
         signIn : () => dispatch(signInAction()),
-        signInSucceededAction : () => dispatch(signInSucceededAction()),
         signOut : () =>dispatch(signOutAction())
     }
 }

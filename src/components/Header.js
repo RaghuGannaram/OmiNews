@@ -1,15 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {signInAction, signInSucceededAction, signOutAction, showWelcomePageAction} from "../redux"
+import {Link} from 'react-router-dom';
+import {signInAction, signOutAction} from "../redux"
 
 function Header(props) {
     return (
         <div>
             <div className = "mainHeader">
-                <span className = "headLeft" onClick= {props.showWelcomePage}>Omi News</span>
-                <span className = "headRight" onClick = {props.isLoggedIn ? props.signOut : props.signIn}>
-                    {props.isLoggedIn ? "Sign Out" : "Sign In"}
-                </span>
+                <Link to = "/"><span className = "headLeft" >Omi News</span></Link>
+                <Link to = "/signin" onClick = {props.isLoggedIn ? props.signOut : props.sigIn}><span className = "headRight" >{props.isLoggedIn ? "Sign Out" : "Sign In"}</span></Link>
             </div>
         </div>
     )
@@ -23,9 +22,7 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = dispatch =>{
     return{
         signIn : () => dispatch(signInAction()),
-        signInSucceededAction : () => dispatch(signInSucceededAction()),
-        signOut : () =>dispatch(signOutAction()),
-        showWelcomePage : ()=>dispatch(showWelcomePageAction())
+        signOut : () =>dispatch(signOutAction())
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

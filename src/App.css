@@ -9,20 +9,23 @@
   color: #fff;
 }
 
+
 /**************************************************** Main Header Styling **********************************/
 .mainHeader{
   height: 50px;
-  padding: 20px;
+  padding: 20px 20px 0px 20px ;
   background-color: rgb(21,77,109);
   border-bottom: 1px solid rgb(14,55,78);
 }
 
 .headRight{
+  color: #fff;
   float: right;
   font-style: italic;
 }
 
 .headLeft{
+  color: #fff;
   float: left;
   font-size: 30px;
   font-family: 'Courier New', Courier, monospace;
@@ -39,7 +42,7 @@
   width: 300px;
   height: 350px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 100px;
   padding: 20px;
   border-radius: 10px;
 }
@@ -63,7 +66,7 @@
 }
 
 .signInCard #signin-button{
-  margin-top: 50px;
+  margin-top: 20px;
   height: 30px;
   width: 80px;
   color: #fff;
@@ -101,21 +104,19 @@
   min-width: 1000px;
   padding: 30px;
   margin: 30px; 
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 .newsImage{
   width: 25%;
   height: 100%;
   border-radius: 3px;
-  border: 2px solid rgb(12, 77, 131);
 }
 
 .articleBody{
   position: relative;
   padding: 10px ;
   box-sizing: border-box;
-  background-color: rgb(2, 73, 117);
   height: 100%;
   width: 70%;
   margin-left: 30px;
@@ -128,9 +129,9 @@
 }
 
 .articleContent , .articleDescription{
-  color: #ccc;
-  font-family:'Courier New', Courier, monospace;
   text-align: left;
+  color: #fff;
+  font-family:'Courier New', Courier, monospace;
 }
 
 .articleLink{
@@ -145,7 +146,7 @@
   display: flex;
   justify-content: space-around;
   border-radius: 3px;
-  border-top: 2px solid rgb(1, 62, 90);
+  border-top: 2px solid rgb(2, 73, 117);
   width: 98%;
 }
 
@@ -173,5 +174,30 @@
   height: 40px;
   width: 100%;
   padding-top: 10px;
+  margin-top: 30px;
   background-color: rgb(21,77,109);
+}
+
+
+/**************************************************************** Scroll Bar Styling ***************************************************/
+/* width */
+::-webkit-scrollbar {
+  background-color: rgb(21,77,109);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  max-height: 10px;
+  border-radius: 4px;
+  background-color: rgb(5, 98, 151);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
 }

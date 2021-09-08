@@ -1,1 +1,1 @@
-export {signInAction, signInSucceededAction, signOutAction, showWelcomePageAction} from "./Actions";
+export {signInAction, signOutAction} from "./Actions";

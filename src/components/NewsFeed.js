@@ -13,7 +13,7 @@ export class NewsFeed extends Component {
     }
     
     componentDidMount(){
-        axios.get("https://newsapi.org/v2/everything?q='india'&apiKey=50fdb2db60ae4a758a309131025cfaac&language=en")
+        axios.get("https://newsapi.org/v2/everything?q='world'&apiKey=50fdb2db60ae4a758a309131025cfaac&language=en")
         .then(res =>{
             this.setState({articles : res.data.articles})
         })
